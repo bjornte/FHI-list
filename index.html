@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-bs-theme="dark">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CSV Viewer with AG Grid</title>
+  <title>ATC/DDD Index</title>
   <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
   <!-- AG Grid CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ag-grid-community/styles/ag-grid.css">
   <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ag-grid-community/styles/ag-theme-alpine.css"> -->
@@ -26,7 +26,8 @@
     <!-- Table -->
     <div id="myGrid" class="ag-theme-quartz"></div>
     <!-- Footer -->
-    <p class="mt-2">On behalf of <a href="https://www.who.int">WHO</a> — by <a href="https://www.fhi.no/en/">NIPH</a> (🇳🇴 <a href="https://www.fhi.no/">FHI</a>)</p>
+    <p class="mt-2">On behalf of <a href="https://www.who.int">WHO</a> — by <a href="https://www.fhi.no/en/">NIPH</a>
+      (🇳🇴 <a href="https://www.fhi.no/">FHI</a>)</p>
   </div>
 
   <!-- AG Grid Script -->
@@ -34,46 +35,7 @@
   <!-- CSV Parsing -->
   <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
   <script src="darkmode.js"></script>
-  <script>
-    // Check browser's color scheme preference
-    const isDarkMode = window.matchMedia("(prefers-color-scheme: dark)").matches;
-    const gridTheme = isDarkMode ? "ag-theme-quartz-dark" : "ag-theme-quartz";
-    document.getElementById("myGrid").className = gridTheme;
-
-    // Load the CSV file and parse it
-    fetch('whocc.csv')
-      .then(response => response.text())
-      .then(csvText => {
-        Papa.parse(csvText, {
-          header: true,
-          skipEmptyLines: true,
-          complete: function (results) {
-            const columnDefs = Object.keys(results.data[0]).map(key => ({
-              field: key,
-              cellRenderer: key === "link-href" ? linkCellRenderer : undefined,
-            }));
-            const rowData = results.data;
-
-            const gridOptions = {
-              columnDefs: columnDefs,
-              rowData: rowData,
-              defaultColDef: {
-                sortable: true,
-                filter: true,
-                resizable: true,
-              },
-            };
-
-            new agGrid.Grid(document.getElementById("myGrid"), gridOptions);
-          },
-        });
-      });
-
-    // Custom cell renderer for links
-    function linkCellRenderer(params) {
-      if (!params.value) return '';
-      return `<a href="${params.value}" target="_blank">${params.value}</a>`;
-    }
+  <script src="ag-grid.js">
   </script>
 </body>
 
