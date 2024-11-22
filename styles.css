@@ -1,0 +1,13 @@
+body {
+  margin: 20px;
+}
+
+.dark-mode {
+  background-color: #121212;
+  color: #ffffff;
+}
+
+#myGrid{
+  height: calc(100vh - 170px);
+  width: 100%;
+}
