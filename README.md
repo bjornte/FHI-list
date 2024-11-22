@@ -1,6 +1,6 @@
 ## NIPH ATC prototype test
 
-* [prototype test](index.html)
+* [prototype test](https://bjornte.github.io/FHI-list/)
 
 # ATC-list
 
