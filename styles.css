@@ -8,6 +8,8 @@ body {
 }
 
 #myGrid{
-  height: calc(100vh - 180px);
+  height: calc(100vh - 170px);
+  min-height: 450px;
+  max-height: 1000px;
   width: 100%;
 }

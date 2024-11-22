@@ -52,6 +52,44 @@
 
       </div>
     </div>
+    <!-- Tabs -->
+    <ul class="nav nav-tabs mt-2" id="myTab" role="tablist">
+      <li class="nav-item" role="presentation">
+        <button class="nav-link active" id="news-tab" data-bs-toggle="tab" data-bs-target="#news" type="button"
+          role="tab" aria-controls="news" aria-selected="true">News</button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" id="courses-tab" data-bs-toggle="tab" data-bs-target="#courses" type="button"
+          role="tab" aria-controls="courses" aria-selected="false">Courses</button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" id="duedates-tab" data-bs-toggle="tab" data-bs-target="#duedates" type="button"
+          role="tab" aria-controls="duedates" aria-selected="false">Due dates</button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" id="studies-tab" data-bs-toggle="tab" data-bs-target="#studies" type="button"
+          role="tab" aria-controls="studies" aria-selected="false">Studies</button>
+      </li>
+    </ul>
+    <div class="tab-content mt-3" id="myTabContent">
+      <div class="tab-pane fade show active" id="news" role="tabpanel" aria-labelledby="home-tab">
+        <h2>News</h2>
+        <p>
+          (Content for news)
+        </p>
+        <p>
+          (Some more content for news)
+        </p>
+        <p>
+          (Last content for news)
+        </p>
+      </div>
+      <div class="tab-pane fade" id="courses" role="tabpanel" aria-labelledby="courses-tab">“Courses” content</div>
+      <div class="tab-pane fade" id="duedates" role="tabpanel" aria-labelledby="duedates-tab">“Due dates” content</div>
+      <div class="tab-pane fade" id="studies" role="tabpanel" aria-labelledby="studies-tab">“Studies” content</div>
+    </div>
+    <hr class="bg-danger border-2 border-top border-secondary" />
+
     <!-- Footer -->
     <p>On behalf of <a href="https://www.who.int">WHO</a> — by <a href="https://www.fhi.no/en/">NIPH</a>
       (🇳🇴 <a href="https://www.fhi.no/">FHI</a>)</p>
@@ -62,7 +100,19 @@
   <!-- CSV Parsing -->
   <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
   <script src="darkmode.js"></script>
-  <script src="ag-grid.js">
+  <script src="ag-grid.js"></script>
+  <script>
+    var triggerTabList = [].slice.call(document.querySelectorAll('#myTab button'));
+    console.log('triggerTabList', triggerTabList);
+    triggerTabList.forEach(function (triggerEl) {
+      var tabTrigger = new bootstrap.Tab(triggerEl)
+
+      triggerEl.addEventListener('click', function (event) {
+        console.log('tab clicked');
+        event.preventDefault()
+        tabTrigger.show()
+      })
+    })
   </script>
 </body>
 
