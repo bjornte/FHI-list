@@ -3,12 +3,12 @@ body {
 }
 
 .dark-mode {
-  background-color: #121212;
-  color: #ffffff;
+  /* background-color: #121212; */
+  /* color: #ffffff; */
 }
 
 #myGrid{
-  height: calc(100vh - 170px);
+  height: calc(100vh - 225px);
   min-height: 450px;
   max-height: 1000px;
   width: 100%;

@@ -5,14 +5,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ATC/DDD Index</title>
-  <!-- Bootstrap CSS -->
+  <!-- Bootstrap CSS & JS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
   <!-- AG Grid CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ag-grid-community/styles/ag-grid.css">
-  <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ag-grid-community/styles/ag-theme-alpine.css"> -->
-  <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ag-grid-community/styles/ag-theme-alpine-dark.css"> -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ag-grid-community/styles/ag-theme-quartz.css" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ag-grid-community/styles/ag-theme-quartz-dark">
   <link rel="stylesheet" href="styles.css">
   <style>
   </style>
@@ -29,26 +27,34 @@
         <div id="myGrid" class="ag-theme-quartz"></div>
       </div>
       <div class="col-12 col-lg-3">
-
-        <div class="card mb-3">
-          <!-- <img src="..." class="card-img-top" alt="..."> -->
-          <div class="card-body">
-            <h5 class="card-title">Apply for ATC entry</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-              content.</p>
-            <a href="#" class="btn btn-primary">Apply</a>
+        <div class="row">
+          <div class="col-12 col-md-6 col-lg-12">
+            <div class="card mb-3">
+              <!-- <img src="..." class="card-img-top" alt="..."> -->
+              <div class="card-body">
+                <h5 class="card-title">Apply for ATC entry</h5>
+                <p class="card-text">
+                  Some quick example text to build on the card title and make up the bulk of the card's content.
+                </p>
+                <a href="#" class="btn btn-primary">Apply</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-12">
+            <div class="card mb-3">
+              <!-- <img src="..." class="card-img-top" alt="..."> -->
+              <div class="card-body">
+                <h5 class="card-title">Order classification index</h5>
+                <p class="card-text">
+                  Some quick example text to build on the card title and make up the bulk of the card's content.
+                </p>
+                <a href="#" class="btn btn-primary">Order</a>
+              </div>
+            </div>
           </div>
         </div>
 
-        <div class="card mb-3">
-          <!-- <img src="..." class="card-img-top" alt="..."> -->
-          <div class="card-body">
-            <h5 class="card-title">Order classification index</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-              content.</p>
-            <a href="#" class="btn btn-primary">Order</a>
-          </div>
-        </div>
+
 
       </div>
     </div>
@@ -73,20 +79,51 @@
     </ul>
     <div class="tab-content mt-3" id="myTabContent">
       <div class="tab-pane fade show active" id="news" role="tabpanel" aria-labelledby="home-tab">
-        <h2>News</h2>
-        <p>
-          (Content for news)
-        </p>
-        <p>
-          (Some more content for news)
-        </p>
-        <p>
-          (Last content for news)
-        </p>
+        <h2>Latest news from NIPH</h2>
+        <p>(Content for news)</p>
+        <p>(Some more content for news)</p>
+        <p>(Last content for news)</p>
       </div>
-      <div class="tab-pane fade" id="courses" role="tabpanel" aria-labelledby="courses-tab">“Courses” content</div>
-      <div class="tab-pane fade" id="duedates" role="tabpanel" aria-labelledby="duedates-tab">“Due dates” content</div>
-      <div class="tab-pane fade" id="studies" role="tabpanel" aria-labelledby="studies-tab">“Studies” content</div>
+      <div class="tab-pane fade" id="courses" role="tabpanel" aria-labelledby="courses-tab">
+        <h2>Courses and seminars</h2>
+        <h3>More colorful collaboration with AI</h3>
+        <div class="row">
+          <div class="col-12 col-md-6">
+            <img src="ai-extends-mix-w-icons.png" height="400" width="400" alt="">
+          </div>
+          <div class="col-12 col-md-6">
+            <p>
+              With AI extending everybody’s reach, let’s look at new collab opportunities (while doing our day job)
+            </p>
+            <p>
+              E.g., AI enables non-developers to make “production-aligned prototypes” using Copilot. Intended value:
+            </p>
+            <ul>
+              <li>Domain experts (e.g. researchers) get more hands-on</li>
+              <li>Better feedback, earlier</li>
+              <li>Saves time (e.g. fewer meetings)</li>
+            </ul>
+            <p>
+              <i>
+                Illustration: Microsoft triad (development, product management, and quality), but with richer colours
+                now that AI enables deeper collaboration
+              </i>
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="tab-pane fade" id="duedates" role="tabpanel" aria-labelledby="duedates-tab">
+        <h2>Due dates and calendar</h2>
+        <p>(Content for due dates)</p>
+        <p>(Some more content for due dates)</p>
+        <p>(Final piece of content for due dates)</p>
+      </div>
+      <div class="tab-pane fade" id="studies" role="tabpanel" aria-labelledby="studies-tab">
+        <h2>Studies and research material</h2>
+        <p>(Content for studies)</p>
+        <p>(Some more content for studies)</p>
+        <p>(Last content for studies)</p>
+      </div>
     </div>
     <hr class="bg-danger border-2 border-top border-secondary" />
 
@@ -103,12 +140,10 @@
   <script src="ag-grid.js"></script>
   <script>
     var triggerTabList = [].slice.call(document.querySelectorAll('#myTab button'));
-    console.log('triggerTabList', triggerTabList);
     triggerTabList.forEach(function (triggerEl) {
       var tabTrigger = new bootstrap.Tab(triggerEl)
 
       triggerEl.addEventListener('click', function (event) {
-        console.log('tab clicked');
         event.preventDefault()
         tabTrigger.show()
       })

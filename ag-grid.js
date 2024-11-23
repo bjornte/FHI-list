@@ -39,7 +39,8 @@ fetch('whocc.csv')
           },
         };
 
-        new agGrid.Grid(document.getElementById("myGrid"), gridOptions);
+        const eGridDiv = document.getElementById("myGrid");
+        const gridApi = agGrid.createGrid(eGridDiv, gridOptions);
         // console.log(columnDefs);
       },
     });
